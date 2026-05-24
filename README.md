@@ -98,6 +98,7 @@ org-api/
 │   │   ├── department_repo.go   — CRUD подразделений (GORM)
 │   │   └── employee_repo.go     — CRUD сотрудников (GORM)
 │   ├── service/
+        ├── department_svc_test.go — тесты бизнес-логики
 │   │   ├── department_svc.go    — бизнес-логика подразделений
 │   │   └── employee_svc.go      — бизнес-логика сотрудников
 │   ├── handler/
