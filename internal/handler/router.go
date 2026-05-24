@@ -3,6 +3,7 @@ package handler
 import (
 	"log/slog"
 	"net/http"
+	"os"
 	"strings"
 
 	"github.com/merclamp/org-api/internal/middleware"
@@ -47,6 +48,13 @@ func NewRouter(
 			writeError(w, http.StatusMethodNotAllowed, "method not allowed")
 		}
 	})
+
+	// Если logger не передали (тесты) — создаём noop
+	if log == nil {
+		log = slog.New(slog.NewTextHandler(os.Stdout, &slog.HandlerOptions{
+			Level: slog.LevelError,
+		}))
+	}
 
 	return middleware.Logger(log)(mux)
 }
