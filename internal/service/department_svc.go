@@ -131,7 +131,7 @@ func (s *DepartmentService) Get(id int, input GetDepartmentInput) (*domain.Depar
 }
 
 func (s *DepartmentService) buildTree(dept *domain.Department, currentDepth, maxDepth int, includeEmployees bool) error {
-	if currentDepth >= maxDepth {
+	if currentDepth > maxDepth {
 		return nil
 	}
 
