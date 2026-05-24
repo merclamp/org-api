@@ -1,0 +1,14 @@
+bin/
+*.exe
+
+.env
+
+.idea/
+.vscode/
+*.swp
+
+.DS_Store
+Thumbs.db
+
+coverage.out
+coverage.html
